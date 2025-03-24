@@ -57,16 +57,27 @@ int main()
             }
         }
         
-        Angabe = stringZuOrientierung(eingabe);
-        
-        
-
-        Wiederholung = printFigure(Anzahl, Angabe); 
+        Angabe = FigureZeichnen::stringZuOrientierung(eingabe);
+        Wiederholung = FigureZeichnen::printFigure(Anzahl, Angabe); 
 
     }
+
+    /*
+    char tell; 
+
+    for (int i = 0; i < 30; i++){
+        tell = nextChar();  
+        cout << tell;
+    }
+    cout << endl; 
+    tell = nextChar(); 
+    cout << tell;
+    
+    */ 
+
 }
 
-Orientierung stringZuOrientierung(std::string EingegebeneOrientierung){
+Orientierung FigureZeichnen::stringZuOrientierung(std::string EingegebeneOrientierung){
 
     Orientierung Ausgabe; 
 
@@ -84,7 +95,7 @@ Orientierung stringZuOrientierung(std::string EingegebeneOrientierung){
 
 
 
-bool printFigure(int MusterGroesse, Orientierung Angabe)
+bool FigureZeichnen::printFigure(int MusterGroesse, Orientierung Angabe)
 {
 
     bool Rückgabewert = false; 
@@ -97,7 +108,7 @@ bool printFigure(int MusterGroesse, Orientierung Angabe)
 
         while (AktuelleAnzahl >= MinimaleAnzahl)
         {
-            printStars(AktuelleAnzahl);
+            FigureZeichnen::printStars(AktuelleAnzahl);
             AktuelleAnzahl--;
         }
 
@@ -105,7 +116,7 @@ bool printFigure(int MusterGroesse, Orientierung Angabe)
 
         while (AktuelleAnzahl <= MaximaleAnzahl)
         {
-            printStars(AktuelleAnzahl);
+            FigureZeichnen::printStars(AktuelleAnzahl);
             AktuelleAnzahl++;
         }
 
@@ -118,7 +129,7 @@ bool printFigure(int MusterGroesse, Orientierung Angabe)
 
         while (AktuelleAnzahl >= MinimaleAnzahl)
         {
-            printSpaces(AnzahlSpaces); 
+            FigureZeichnen::printSpaces(AnzahlSpaces); 
             printStars(AktuelleAnzahl);
 
             AktuelleAnzahl--;
@@ -130,8 +141,8 @@ bool printFigure(int MusterGroesse, Orientierung Angabe)
 
         while (AktuelleAnzahl <= MaximaleAnzahl)
         {
-            printSpaces(AnzahlSpaces); 
-            printStars(AktuelleAnzahl);
+            FigureZeichnen::printSpaces(AnzahlSpaces); 
+            FigureZeichnen::printStars(AktuelleAnzahl);
 
             AktuelleAnzahl++;
             AnzahlSpaces--; 
@@ -151,13 +162,14 @@ bool printFigure(int MusterGroesse, Orientierung Angabe)
 }
 
 
-void printStars(int n)
+void FigureZeichnen::printStars(int n)
 {
     int i = 0;
     while (i < n)
     {
 
-        std::cout << "*";
+        cout << FigureZeichnen::nextChar(); 
+
         i++;
     }
 
@@ -165,7 +177,7 @@ void printStars(int n)
 }
 
 
-void printSpaces(int AnzahlSpaces)
+void FigureZeichnen::printSpaces(int AnzahlSpaces)
 {
     int i = 0; 
     while (i < AnzahlSpaces){
@@ -175,16 +187,32 @@ void printSpaces(int AnzahlSpaces)
     
 }
 
-char nextChar()
+char FigureZeichnen::nextChar()
 {
-    char nächsterBuchstabe;
-
-    static #
-    unsigned char = 'a';
+    static unsigned char auszugebenderBuchstabe = 'a'; 
+    static unsigned int i = 0; 
     
-    
-    nächsterBuchstabe = 
+    if(i == 0){
+
+        auszugebenderBuchstabe = 'a'; 
+        i = 1;
+
+    }
+    else if (i == 26){
+
+        
+        auszugebenderBuchstabe = 'a'; 
+        i = 1; 
+    }
+    else{
+        
+        auszugebenderBuchstabe = 'a'; 
+        auszugebenderBuchstabe = auszugebenderBuchstabe + i;
+        i++;
+
+    }
 
 
-    return nächsterBuchstabe; 
+    return auszugebenderBuchstabe; 
 }
+
