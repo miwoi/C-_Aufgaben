@@ -334,18 +334,47 @@ void NeueZuweisungen()
         //**ppg = 24; 
 
     
+
+    // TO DO 
     //int const const a = 0; 
-    const int const b = 0;
+    //const int const b = 0;
     //const const int c = 0; 
     
-    int* const const a1 = &a;  
-    int const* const a2 = &a; 
-    int const const* a3 = &a; 
+    //int* const const a1 = &a;  
+    //int const* const a2 = &a; 
+    //int const const* a3 = &a; 
 
-    const int* const b1 = &b;
-    const int const* b2 = &b; 
-
-
+    //const int* const b1 = &b;
+    //const int const* b2 = &b; 
 
 
+
+
+}
+
+void AuswahlVonOperatoren()
+{
+    /*
+    int i = 10; 
+    int *j; 
+    int **k;
+    int const l;
+    int const *const m; 
+    int const* n; 
+    int const* const* o; 
+    const int** const p; 
+
+
+    j = &i; 
+    // i = ...;
+    //k = ...; 
+    k = &j;
+    i =
+    */ 
+
+    
+}
+
+void ArrayBasics()
+{
 }

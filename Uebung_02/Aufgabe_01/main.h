@@ -20,3 +20,4 @@ void Programmanalyse(int&);
 void constCorrectness(); 
 
 void NeueZuweisungen(); 
+void AuswahlVonOperatoren(); 
