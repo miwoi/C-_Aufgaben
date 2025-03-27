@@ -19,10 +19,17 @@ int main(){
     //printArrayIterator(pArray, ArraySize);
     //SubArrays(Array + 1, Array + 3);
 
-    ArraysUndHeap();
+    size_t size; 
+
+    int *NeuerPointer = ArraysUndHeap( &size);
+
+    SubArrays(NeuerPointer, NeuerPointer + size);
+
+    delete[] NeuerPointer;
+    NeuerPointer = nullptr; 
 
 }
-
+ 
 void ArrayBasics(){
 
     // Interger Array der Größe 10
@@ -98,7 +105,7 @@ void ArrayLogik()
 
 void printArray(const int *array, size_t size)
 {
-
+    size = size - 1;  
     cout << "printArray" << endl;
     for (size_t i = 0; i < size; ++i)
     {
@@ -142,19 +149,23 @@ void SubArrays(const int *begin, const int *end)
 
 }
 
-void ArraysUndHeap()
+
+
+int* ArraysUndHeap(size_t *size)
 {
 
     size_t AnzahlElemenete = 0; 
     cout << "Aus wievielen Elementen soll das Array bestehen: "; 
     cin >> AnzahlElemenete;
-    cout << "Anzahl eingegebener Elemente: " << AnzahlElemenete << endl; 
+    cout << "Geben Sie " << AnzahlElemenete << " Zahlen ein: " << endl; 
 
     int *pArray = new int [AnzahlElemenete];
 
-    delete[] pArray; 
-    pArray = nullptr; 
+    for (size_t i = 0; i < AnzahlElemenete; ++i){
 
+        cin >> pArray[i]; 
+    }
 
-
+    *size = AnzahlElemenete; 
+    return pArray; 
 }

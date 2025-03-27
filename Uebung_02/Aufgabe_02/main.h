@@ -10,4 +10,4 @@ void printArrayPoi(const int*, size_t);
 void printArrayIterator(const int *, size_t);
 
 void SubArrays(const int*, const int*);
-void ArraysUndHeap(); 
+int* ArraysUndHeap(size_t*); 
